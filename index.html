@@ -31,7 +31,7 @@ footer role=content info -->
       <!-- Semantic issue: This navigation block is inside a generic div instead of a <nav> element, which removes the landmark semantics that assistive technology expects for main navigation. -->
       <nav class="main-nav" role="navigation">
         <ul>
-          <li><a href="#">Home</a></li>
+          <li><a href="/" aria-current="page">Home</a></li>
           <li><a href="#">Products</a></li>
           <li><a href="#">Reservation</a></li>
           <li><a href="#">Studio</a></li>
@@ -47,27 +47,30 @@ footer role=content info -->
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio quia veritatis.</p>
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto error voluptatibus.</p>
       <!-- Semantic issue: This is a profile/biographical block, but it is a generic div. It would be more meaningful as <article> or a semantic section, and the address should use the <address> element instead of normal paragraph text. -->
-      <article class="owner" role="article">
+      <!-- adding in schema for person to have accesibility on the owners details and address -->
+        <article class="owner" role="article" itemscope itemtype="http://schema.org/Person">
         <!-- added capitilization to title -->
         <h2>Meet The Owner</h2>
         <ul>
-          <li>Name: John Doe</li>
-          <li>Title: CEO</li>
-          <li>Email: johnjoe@jambox.ca</li>
-          <li>Phone: 613-000-0000</li>
+          <li itemprop="name">Name: John Doe</li>
+          <li itemprop="jobTitle">Title: CEO</li>
+          <li itemprop="email">Email: johnjoe@jambox.ca</li>
+          <li itemprop="telephone">Phone: 613-000-0000</li>
         </ul>
         <h2>Address</h2>
-        <!-- added line breaks to make the address more readable -->
-        <address>
-          Jambox Studios <br>
-          123 Guitar Road, <br>
-          Musicville, Danceistan <br>
-          B3T 0L0
+        <!-- added line breaks to make the address more readable, more schema
+         had to insert span to be able to identify each indivual line of schema -->
+        <address itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+          <span itemprop="name">Jambox Studios</span> <br>
+          <span itemprop="streetAddress">123 Guitar Road</span> <br>
+          <span itemprop="addressLocality">Musicville</span>, <span itemprop="addressRegion">Danceistan</span> <br>
+          <span itemprop="postalCode">B3T 0L0</span>
         </address>
       </article>
       <!-- Semantic issue: The contact form lacks programmatic labels for its inputs. Placeholder text is not a substitute for labels, and each field should be associated with a proper <label> or fieldset/legend structure. -->
       <article class="contact-section" role="article">
         <h2>Contact Us</h2>
+        <!-- can't find schema in relation to filling out a form so adding ARIA -->
         <form action="thanks.html">
           <label for="full-name">Full Name</label>
           <input type="text" id="full-name" placeholder="Full Name">
