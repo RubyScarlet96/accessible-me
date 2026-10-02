@@ -1,17 +1,21 @@
 body {
-  font-family: 'Roboto', Helvetica, sans-serif;
-  background-color: grey;
+  /* changed font for easier reading and changed size to 20px  */
+  font-family: 'helvetica', sans-serif;
+  /* changed background colour to white for better contrast */
+  background-color: white;
   margin: 0;
   padding: 0;
+  font-size: 20px;
 }
 
+/* changed font type to helvetica, as a dyslexic this is much easier to read */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: 'Stick No Bills', 'Roboto', Helvetica, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .container {
@@ -44,12 +48,13 @@ img {
   font-size: 1.25rem;
 }
 
+/* removed some padding as it was creating odd space */
 form input,
 form textarea {
   display: block;
   width: 100%;
   margin-bottom: 1rem;
-  padding: .5rem 1rem;
+  padding: .5rem;
 }
 
 form textarea {
@@ -59,13 +64,36 @@ form textarea {
   resize: none;
 }
 
+/* added bold to send to make it easier to read */
 form button {
   background: none;
   border: 2px solid black;
-  padding: 1rem;
+  padding: .5rem 1rem;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 .site-footer {
   padding: 2rem 0;
+}
+
+/* added form label margin to create more spacing in the form for easier reading
+added font weight and size to make it easier to read, increasing size */
+form label {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* asked ai why the placeholder text for the your message here was different from the other placeholder text
+it said its rendered by the browser so a rule must be added for it 
+it suggested form input::placeholder and form textarea::placeholder
+ to target the placeholder text 
+ I changed the font family to match and darkened the text colour for better contrast and added a larger font size */
+form input::placeholder,
+form textarea::placeholder {
+  color: #292929;
+  font-family: 'helvetica', sans-serif;
+  font-size: 1rem;
 }

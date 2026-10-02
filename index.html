@@ -41,7 +41,8 @@
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto error voluptatibus.</p>
       <!-- Semantic issue: This is a profile/biographical block, but it is a generic div. It would be more meaningful as <article> or a semantic section, and the address should use the <address> element instead of normal paragraph text. -->
       <article class="owner">
-        <h2>Meet the owner</h2>
+        <!-- added capitilization to title -->
+        <h2>Meet The Owner</h2>
         <ul>
           <li>Name: John Doe</li>
           <li>Title: CEO</li>
@@ -49,10 +50,11 @@
           <li>Phone: 613-000-0000</li>
         </ul>
         <h2>Address</h2>
+        <!-- added line breaks to make the address more readable -->
         <address>
-          Jambox Studios
-          123 Guitar Road,
-          Musicville, Danceistan
+          Jambox Studios <br>
+          123 Guitar Road, <br>
+          Musicville, Danceistan <br>
           B3T 0L0
         </address>
       </article>
@@ -68,7 +70,8 @@
           <input type="text" id="subject" placeholder="Subject">
           <!-- Semantic issue: <b> is a presentational tag, not a semantic label. Use <label> for form field text so assistive technology can associate the text with the correct input. -->
           <label for="message">Your Message</label>
-          <textarea id="message"></textarea>
+          <!-- added placeholder field to message box -->
+          <textarea id="message" placeholder="Your Message Here"></textarea>
           <button type="submit">Send</button>
         </form>
       </article>
