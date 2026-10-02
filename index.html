@@ -18,11 +18,18 @@
     Then went in an manually changed the errors, removing unnecessary divs and using proper semantic elements -->
   <div class="container">
     <!-- Semantic issue: This is the page header, but it is marked up as a generic div. A header landmark should use <header>, and the navigation should also be a <nav> landmark for better screen reader navigation. -->
-    <header class="site-header">
+      <!-- Propmeted AI to add ARIA 
+       add ARIA roles to the following elements:
+header role=banner,
+nav role= navigation
+main role=main,
+article role=article,
+footer role=content info -->
+    <header class="site-header" role="banner">
       <h1>Jam Box Studios</h1>
       </header>
       <!-- Semantic issue: This navigation block is inside a generic div instead of a <nav> element, which removes the landmark semantics that assistive technology expects for main navigation. -->
-      <nav class="main-nav">
+      <nav class="main-nav" role="navigation">
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">Products</a></li>
@@ -34,13 +41,13 @@
        <!-- i'm assuming the image is decorative as it has a class banner and the assignment said the images were random -->
       <img src="https://placekitten.com/1200/900" class="banner" alt=""> 
     <!-- Semantic issue: This content area is a generic div instead of a <main> landmark, which should contain the primary content of the page. -->
-    <main class="main-content">
+    <main class="main-content" role="main">
       <!-- Semantic issue: The page uses multiple <h1> elements for separate sections. A proper document outline should have one main <h1> and lower-level headings (<h2>, <h3>) for subsections. -->
       <h1>Welcome to Jam Box</h1>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio quia veritatis.</p>
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto error voluptatibus.</p>
       <!-- Semantic issue: This is a profile/biographical block, but it is a generic div. It would be more meaningful as <article> or a semantic section, and the address should use the <address> element instead of normal paragraph text. -->
-      <article class="owner">
+      <article class="owner" role="article">
         <!-- added capitilization to title -->
         <h2>Meet The Owner</h2>
         <ul>
@@ -59,7 +66,7 @@
         </address>
       </article>
       <!-- Semantic issue: The contact form lacks programmatic labels for its inputs. Placeholder text is not a substitute for labels, and each field should be associated with a proper <label> or fieldset/legend structure. -->
-      <article class="contact-section">
+      <article class="contact-section" role="article">
         <h2>Contact Us</h2>
         <form action="thanks.html">
           <label for="full-name">Full Name</label>
@@ -77,7 +84,7 @@
       </article>
       </main>
     <!-- Semantic issue: This is the footer of the page, but it is wrapped in a generic div instead of a semantic <footer> landmark. -->
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
       &copy; 2021 Jam Box Studios
     </footer>
   </div>
