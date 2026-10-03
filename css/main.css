@@ -117,3 +117,9 @@ nav li:active, form button:active {
 p {
   text-indent: 1rem;
 }
+
+.skip-link {
+  position: absolute;
+  top: auto;
+  left: -9999px;
+}
