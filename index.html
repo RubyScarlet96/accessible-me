@@ -73,14 +73,14 @@ footer role=content info -->
         <h2>Contact Us</h2>
         <!-- can't find schema in relation to filling out a form so adding ARIA -->
         <form action="thanks.html" role="form" aria-label="Contact Form">
-          <label for="full-name">Full Name</label>
+          <label for="enter-full-name">Full Name</label>
           <input type="text" id="enter-full-name" placeholder="Full Name" aria-labelledby="enter-full-name">
-          <label for="email">Email</label>
+          <label for="enter-email">Email</label>
           <input type="text" id="enter-email" placeholder="Email" aria-labelledby="enter-email">
-          <label for="subject">Subject</label>
+          <label for="enter-subject">Subject</label>
           <input type="text" id="enter-subject" placeholder="Subject" aria-labelledby="enter-subject">
           <!-- Semantic issue: <b> is a presentational tag, not a semantic label. Use <label> for form field text so assistive technology can associate the text with the correct input. -->
-          <label for="message">Your Message</label>
+          <label for="enter-message">Your Message</label>
           <!-- added placeholder field to message box -->
           <textarea id="enter-message" placeholder="Your Message Here" aria-labelledby="enter-message"></textarea>
           <button type="submit">Send</button>
