@@ -18,10 +18,14 @@ h6 {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
 
+/* addjusted padding until it looked even, left side had slightly more */
 .container {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0rem 3rem 0rem 2rem;
+  border: 1px solid #ccc;
+  display:block;
+  background-color: #f5e6c5;
 }
 
 img {
@@ -96,4 +100,20 @@ form textarea::placeholder {
   color: #292929;
   font-family: 'helvetica', sans-serif;
   font-size: 1rem;
+}
+
+/* added hover effects and active effect for a bit of fun */
+nav li:hover, form button:hover {
+  background-color: #b1e9ff;
+  transition: background-color 0.3s ease;
+}
+
+nav li:active, form button:active {
+  background-color: #fcbbf3;
+  transition: background-color 0.3s ease;
+}
+
+/* style pargraphs with an indent */
+p {
+  text-indent: 1rem;
 }
